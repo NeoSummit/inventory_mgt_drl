@@ -1,30 +1,14 @@
 # inventory_mgt_drl
+Cet algorithme est un prototype destiné à déterminer les commandes des hôpitaux auprès de l'entrepôt ainsi que les quantités échangées au cours de la journée, afin d'optimiser les coûts de stockage et de transport, tout en répondant à la demande quotidienne, ici déterminée de manière aléatoire. Il s'agit d'un algorithme de reinforcement learning profond (DRL) qui utilise un réseau de deep Q-learning.
 
-# Modélisation volet 2
+### 
 
-### Contraintes
-
-- 1 hôpital qui est dépanné ne peut pas dépanner des hôpitaux et inversement
-- Chaque hôpitaux a une capacité de stockage max
+- Un hôpital qui est dépanné ne peut pas dépanner d'autres hôpitaux et inversement.
+- Chaque hôpital a une capacité de stockage maximale.
 - Les inventaires ne peuvent pas être négatifs.
-- Il est possible d'être en sur stock pendant la journée (le surplus de commandes sont calculés en fin de journée)
-- La journée se déroule suivant l'ordre suivant : la réception des commandes de la warehouse, dépannage entre hôpitaux, satisfaction de la demande journalière
-
-### Variables du modèle
-
-state : vecteur représentant l'inventory level de chaque hôpital du problème. un vecteur de taille le nombre d'hôpitaux
-
-action : vecteur représentant les différentes actions prises. Il comprend les commandes des hôpitaux à la warehouse ainsi que les échanges entre-hôpitaux
-
-### Explication des fonctions train et replay
-
-
-
-### Vérification que le réseau apprend bien
-
-- Si le réseau (l'agent) doit apprendre à remplir correctement la matrice des demandes ( Dij quantité que demande i à j) notamment à comprendre que le remplissage de la diagonale n'a pas d'impact et également qu'un Dij non nul sur la ligne i implique que les Dji sur la colonne i n'ont plus d'impacts
-
-Voici une synthèse de la documentation du code fourni, qui explique les principales variables et méthodes, en mettant l'accent sur les méthodes `train`, `replay`, ainsi que sur les fonctions `process_demands_random_order`, `is_matrix_correct_form` et `create_random_correct_matrix`.
+- Il est possible d'être en surstock pendant la journée (le surplus de commandes est calculé en fin de journée).
+- La journée se déroule selon l'ordre suivant : réception des commandes de l'entrepôt, dépannage entre hôpitaux, satisfaction de la demande journalière.
+- Le réseau (l'agent) doit apprendre à remplir correctement la matrice des demandes (Dij, quantité que demande i à j), en comprenant notamment que le remplissage de la diagonale n'a pas d'impact et qu'un Dij non nul sur la ligne i implique que les Dji sur la colonne i n'ont plus d'impact.
 
 ### Classe `Env`
 
