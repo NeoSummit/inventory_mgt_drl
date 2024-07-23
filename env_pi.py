@@ -107,7 +107,7 @@ class Env:
     
     def update_previous_demand(self, demands: np.ndarray, previous_demand: np.ndarray) -> None:
         """
-        Update the demands for the next step.
+        Update the previous demands for the next step.
 
         Parameters:
         demands (np.ndarray): Current demands.
