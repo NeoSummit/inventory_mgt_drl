@@ -89,5 +89,5 @@ La méthode `replay` est responsable de l'apprentissage de l'agent en utilisant 
 5. Effectuer une étape de rétropropagation pour mettre à jour les poids du réseau de politique.
 6. Réduire l'epsilon pour diminuer progressivement l'exploration.
 
-### Conclusion
-Le code décrit la création d'un environnement simulé d'échanges de produits entre hôpitaux et l'entraînement d'un agent DQN pour optimiser ces échanges. Les méthodes et fonctions permettent de gérer les demandes et les inventaires des hôpitaux, d'apprendre des expériences passées, et d'évaluer les performances de l'agent.
+
+La création d'un environnement permettant de simuler des échanges de produits entre hôpitaux puis l'entraînement d'un agent DQN pour optimiser ces échanges. Les méthodes et fonctions permettent de gérer les demandes et les inventaires des hôpitaux, d'apprendre des expériences passées, et d'évaluer les performances de l'agent.
